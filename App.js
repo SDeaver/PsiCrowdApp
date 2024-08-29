@@ -8,6 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { allStyles } from './styles/AllStyles';
 import HomeScreen from './screens/HomeScreen';
 import UserScreen from './screens/UserScreen';
+import Header from './components/Header';
 import { HomeIcon, UserIcon } from './components/Icons';
 
 const Tab = createBottomTabNavigator();
@@ -23,8 +24,8 @@ export default function App() {
             screenOptions={
                {
                   tabBarShowLabel: false,
-                  tabBarStyle: allStyles.tabBarMainStyle,
-                  headerShown: false,
+                  tabBarStyle: allStyles.tabBarMain,
+                  header: ({ navigation, route, options })=> { return (<Header/>) }
                }
             }
          >

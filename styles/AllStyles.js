@@ -2,8 +2,8 @@ import { StyleSheet } from 'react-native';
 
 
 export const colors = {
-   brand_01: 'pink',
-   brand_02: 'blue',
+   brand_01: 'lightblue',
+   brand_02: 'ghostwhite',
 }
 
 
@@ -12,7 +12,7 @@ export const allStyles = StyleSheet.create ({
       alignItems: 'center',
       justifyContent: 'center',
       height: '100%',
-      backgroundColor: colors.brand_01,
+      backgroundColor: colors.brand_02,
    },
    yearBreak: {
       height: 2,
@@ -22,7 +22,18 @@ export const allStyles = StyleSheet.create ({
       marginBottom: 20,
       backgroundColor: colors.text,
    },
-   tabBarMainStyle: {
-      backgroundColor: colors.brand_02,
+   tabBarMain: {
+      backgroundColor: colors.brand_01,
+   },
+   headerMain: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: 50,
+      width: '100%',
+      backgroundColor: colors.brand_01,
+   },
+   headerTitle: {
+      color: colors.brand_02,
    }
+
 })
