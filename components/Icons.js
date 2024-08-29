@@ -11,3 +11,9 @@ export function UserIcon() {
       <Text style={ {color: 'ghostwhite'} }>o</Text>
    )
 }
+
+export function SettingsIcon() {
+   return(
+      <Text style={ {color: 'ghostwhite'} }>+</Text>
+   )   
+}

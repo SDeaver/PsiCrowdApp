@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 
 export const colors = {
-   brand_01: 'lightblue',
+   brand_01: 'steelblue',
    brand_02: 'ghostwhite',
 }
 
