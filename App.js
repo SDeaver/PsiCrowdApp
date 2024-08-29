@@ -3,12 +3,14 @@
 import { View, Text } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import { allStyles } from './styles/AllStyles';
 import HomeScreen from './screens/HomeScreen';
 import UserScreen from './screens/UserScreen';
+import { HomeIcon, UserIcon } from './components/Icons';
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 
 export default function App() {
@@ -16,10 +18,31 @@ export default function App() {
   return (
 
       <NavigationContainer>
-         <Stack.Navigator initialRouteName="Home">
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="User" component={UserScreen} />
-         </Stack.Navigator>
+         <Tab.Navigator
+            initialRouteName='Home'
+            screenOptions={
+               {
+                  tabBarShowLabel: false,
+                  tabBarStyle: allStyles.tabBarMainStyle,
+                  headerShown: false,
+               }
+            }
+         >
+            <Tab.Screen
+               name="Home"
+               component={HomeScreen}
+               options={
+                  { tabBarIcon: ()=> { return (<HomeIcon/>) } }
+               }
+            />
+            <Tab.Screen
+               name="User"
+               component={UserScreen}
+               options={
+                  { tabBarIcon: ()=> { return (<UserIcon/>) } }
+               }
+            />
+         </Tab.Navigator>
       </NavigationContainer>
       
   );

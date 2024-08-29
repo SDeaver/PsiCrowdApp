@@ -3,12 +3,13 @@ import { StyleSheet } from 'react-native';
 
 export const colors = {
    brand_01: 'pink',
+   brand_02: 'blue',
 }
 
 
 export const allStyles = StyleSheet.create ({
    mainContainer: {
-      alignContent: 'center',
+      alignItems: 'center',
       justifyContent: 'center',
       height: '100%',
       backgroundColor: colors.brand_01,
@@ -21,4 +22,7 @@ export const allStyles = StyleSheet.create ({
       marginBottom: 20,
       backgroundColor: colors.text,
    },
+   tabBarMainStyle: {
+      backgroundColor: colors.brand_02,
+   }
 })
