@@ -6,6 +6,9 @@ export const colors = {
    brand_02: 'ghostwhite',
 }
 
+export const allFonts = {
+   fontMain: require('../assets/fonts/AvenirLTStd-Medium.otf')
+}
 
 export const allStyles = StyleSheet.create ({
    mainContainer: {
@@ -14,13 +17,9 @@ export const allStyles = StyleSheet.create ({
       height: '100%',
       backgroundColor: colors.brand_02,
    },
-   yearBreak: {
-      height: 2,
-      width: '80%',
-      alignSelf: 'center',
-      marginTop: 30,
-      marginBottom: 20,
-      backgroundColor: colors.text,
+   backgroundImg: {
+      opacity: 0.05,
+      resizeMode: 'center',
    },
    tabBarMain: {
       backgroundColor: colors.brand_01,
@@ -33,7 +32,14 @@ export const allStyles = StyleSheet.create ({
       backgroundColor: colors.brand_01,
    },
    headerTitle: {
+      fontFamily: 'fontMain',
+      fontSize: 18,
       color: colors.brand_02,
+   },
+   bodyText: {
+      fontFamily: 'fontMain',
+      fontSize: 36,
+      color: colors.brand_01,
    }
 
 })

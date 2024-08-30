@@ -1,21 +1,44 @@
-//import * as React from 'react';
 
-import { View, Text } from 'react-native';
+import React, { useEffect } from 'react';
+//import { View, Text } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { allStyles } from './styles/AllStyles';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
+
+import { allStyles, allFonts } from './styles/AllStyles';
 import HomeScreen from './screens/HomeScreen';
 import UserScreen from './screens/UserScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import Header from './components/Header';
 import { HomeIcon, UserIcon, SettingsIcon } from './components/Icons';
 
+
 const Tab = createBottomTabNavigator();
+
+SplashScreen.preventAutoHideAsync();
 
 
 export default function App() {
+
+   // font loading
+
+   const [fontsLoaded, fontsError] = useFonts({
+      'fontMain': allFonts.fontMain,
+    });
+  
+    useEffect(() => {
+      if (fontsLoaded || fontsError) {
+        SplashScreen.hideAsync();
+      }
+    }, [fontsLoaded, fontsError]);
+  
+    if (!fontsLoaded && !fontsError) {
+      return null;
+    }
+
 
   return (
 

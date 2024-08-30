@@ -1,13 +1,15 @@
-import { Text, View } from 'react-native';
+import { Text, View, ImageBackground } from 'react-native';
+
 import { allStyles } from '../styles/AllStyles';
+import { imageList } from '../styles/ImageList'
 
 export default function UserScreen() {
 
    return(
 
-      <View style={allStyles.mainContainer}>
-         <Text>User Screen</Text>
-      </View>
-
+      <ImageBackground source={imageList.bg} style={allStyles.mainContainer} imageStyle={allStyles.backgroundImg}>
+            <Text style={allStyles.bodyText} >User Screen</Text>
+      </ImageBackground>
+      
    );
 }
