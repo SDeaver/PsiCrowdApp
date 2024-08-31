@@ -1,6 +1,6 @@
 
-import React, { useEffect } from 'react';
-//import { View, Text } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Modal } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -13,6 +13,7 @@ import HomeScreen from './screens/HomeScreen';
 import UserScreen from './screens/UserScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import Header from './components/Header';
+import FAQPopup from './components/FAQPopup'
 import { HomeIcon, UserIcon, SettingsIcon } from './components/Icons';
 
 
@@ -23,33 +24,49 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
 
+   const [modalVisible, setModalVisible] = useState(false);
+
+
    // font loading
 
    const [fontsLoaded, fontsError] = useFonts({
       'fontMain': allFonts.fontMain,
-    });
-  
-    useEffect(() => {
+      });
+
+      useEffect(() => {
       if (fontsLoaded || fontsError) {
-        SplashScreen.hideAsync();
+         SplashScreen.hideAsync();
       }
-    }, [fontsLoaded, fontsError]);
-  
-    if (!fontsLoaded && !fontsError) {
+      }, [fontsLoaded, fontsError]);
+
+      if (!fontsLoaded && !fontsError) {
       return null;
-    }
+      }
 
 
-  return (
+   function faqOpen() {
+      setModalVisible(true);
+   }
+
+   function faqClose() {
+      setModalVisible(false);
+   }
+
+   return (
 
       <NavigationContainer>
+
+         <Modal visible={modalVisible} animationType='fade' transparent={true}>
+            < FAQPopup faqClose={faqClose} />
+         </Modal>
+
          <Tab.Navigator
             initialRouteName='Home'
             screenOptions={
                {
                   tabBarShowLabel: false,
                   tabBarStyle: allStyles.tabBarMain,
-                  header: ({ navigation, route, options })=> { return (<Header/>) }
+                  header: ({ navigation, route, options })=> { return (<Header faqOpen={faqOpen} />) }
                }
             }
          >

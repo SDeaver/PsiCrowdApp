@@ -8,7 +8,7 @@ export default function SettingsScreen() {
    return(
 
       <ImageBackground source={imageList.bg} style={allStyles.mainContainer} imageStyle={allStyles.backgroundImg}>
-            <Text style={allStyles.bodyText} >Settings Screen</Text>
+            <Text style={allStyles.bodyText}>Settings Screen</Text>
       </ImageBackground>
 
    );
