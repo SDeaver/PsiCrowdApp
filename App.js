@@ -1,6 +1,6 @@
 
-import React, { useState, useEffect } from 'react';
-//import { Modal } from 'react-native';
+import React, { useEffect } from 'react';
+import { Modal, View } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -14,7 +14,6 @@ import UserScreen from './screens/UserScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import FAQScreen from './screens/FAQScreen'
 import Header from './components/Header';
-//import FAQPopup from './components/FAQPopup'
 import { HomeIcon, UserIcon, SettingsIcon } from './components/Icons';
 
 
@@ -25,41 +24,28 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
 
-   //const [modalVisible, setModalVisible] = useState(false);
-
-
    // font loading
 
    const [fontsLoaded, fontsError] = useFonts({
       'fontMain': allFonts.fontMain,
       });
 
-      useEffect(() => {
-      if (fontsLoaded || fontsError) {
-         SplashScreen.hideAsync();
-      }
-      }, [fontsLoaded, fontsError]);
+   useEffect(() => {
+   if (fontsLoaded || fontsError) {
+      SplashScreen.hideAsync();
+   }
+   }, [fontsLoaded, fontsError]);
 
-      if (!fontsLoaded && !fontsError) {
-      return null;
-      }
+   if (!fontsLoaded && !fontsError) {
+   return null;
+   }
 
 
-   // function faqOpen() {
-   //    setModalVisible(true);
-   // }
-
-   // function faqClose() {
-   //    setModalVisible(false);
-   // }
+   // navigation
 
    return (
 
       <NavigationContainer>
-
-         {/* <Modal visible={modalVisible} animationType='fade' transparent={true}>
-            < FAQPopup faqClose={faqClose} />
-         </Modal> */}
 
          <Tab.Navigator
             initialRouteName='Home'

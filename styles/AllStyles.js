@@ -3,8 +3,14 @@ import { StyleSheet } from 'react-native';
 
 export const colors = {
    brand_01: '#2B6CA3',
+   brand_01A: 'rgba(43,108,163,0.15)',
+   brand_01B: 'rgba(43,108,163,0.4)',
    brand_02: '#F8F8FF',
+   transparent: 'rgba(0,0,0,0)',
 }
+
+export const surveyListGradientColors = [colors.transparent, colors.brand_01B]
+
 
 export const allFonts = {
    fontMain: require('../assets/fonts/AvenirLTStd-Medium.otf')
@@ -27,6 +33,11 @@ export const allStyles = StyleSheet.create ({
    },
    iconMain: {
       color: colors.brand_02,
+   },
+   bodyText: {
+      fontFamily: 'fontMain',
+      fontSize: 36,
+      color: colors.brand_01,
    },
 
    headerMain: {
@@ -52,32 +63,69 @@ export const allStyles = StyleSheet.create ({
       fontSize: 18,
       color: colors.brand_02,
    },
-   bodyText: {
-      fontFamily: 'fontMain',
-      fontSize: 36,
-      color: colors.brand_01,
-   },
 
-   containerHome: {
+
+   homeContainer: {
       alignItems: 'center',
       //justifyContent: 'center',
       height: '100%',
       backgroundColor: colors.brand_02,
    },   
-   titleHome: {
+   homeTitle: {
       fontFamily: 'fontMain',
-      fontSize: 28,
-      color: colors.brand_01,     
+      fontSize: 24,
+      color: colors.brand_01,
+      paddingTop: '5%',     
    },
-   titleViewHome: {
-      height: '15%',
+   homeTitleView: {
+      height: '12%',
       justifyContent: 'center',
    },
-   surveyList: {
-      
+   surveyListContainer: {
+      width: '88%',
+      height: '84%',
+      borderWidth: 1,
+      borderColor: colors.brand_01,
+      backgroundColor: colors.brand_01A,
    },
-
-
+   surveyList: {
+      paddingTop: '5%',
+   },
+   surveyCardContainer: {
+      backgroundColor: colors.brand_02,
+      borderWidth: 1,
+      borderColor: colors.brand_01,
+      width: '90%',
+      padding: '5%',
+      marginHorizontal: '5%',
+      marginVertical: '2%',
+   },
+   surveyListGradient:
+   {
+      bottom: 0,
+      position: 'absolute',
+      height: '40%',
+      width: '100%'
+   },
+   surveyListFooter:
+   {
+      width: '100%',
+      height: 500,
+   },
+   surveyListButton: {
+      alignSelf: 'center',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: '10%',
+      backgroundColor: colors.brand_01,
+      width: '35%',
+      height: '8%',
+   },
+   surveyListButtonText: {
+      fontFamily: 'fontMain',
+      fontSize: 14,
+      color: colors.brand_02,
+   },
 
    modalContainer: {
       flex: 1,
@@ -85,26 +133,26 @@ export const allStyles = StyleSheet.create ({
       alignItems: 'center',
       height: '100%',
    },
-   faqContainer: {
+   surveyContainer: {
       justifyContent: 'center',
       alignItems: 'center',
       borderWidth:2,
       borderColor: colors.brand_01,
-      height: '70%',
-      width: '80%',
+      height: '100%',
+      width: '100%',
       backgroundColor: colors.brand_02,
    },
-   faqXbutton: {
+   modalXbutton: {
       position: 'absolute',
       right: 10,
       top: 10,
    },
-   faqHeader: {
+   surveyHeader: {
       fontFamily: 'fontMain',
       fontSize: 18,
       color: colors.brand_01,
    },
-   faqBody: {
+   surveyBody: {
       fontFamily: 'fontMain',
       fontSize: 16,
    }
