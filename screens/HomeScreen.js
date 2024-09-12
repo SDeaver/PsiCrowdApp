@@ -60,6 +60,7 @@ export default function HomeScreen() {
             <LinearGradient
                colors={surveyListGradientColors}
                style={allStyles.surveyListGradient}
+               pointerEvents='none'
             />
 
          </View>
