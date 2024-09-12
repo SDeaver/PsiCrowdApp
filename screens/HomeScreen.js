@@ -7,8 +7,10 @@ export default function HomeScreen() {
 
    return(
 
-      <ImageBackground source={imageList.bg} style={allStyles.mainContainer} imageStyle={allStyles.backgroundImg}>
-            <Text style={allStyles.bodyText} >Home Screen</Text>
+      <ImageBackground source={imageList.bg} style={allStyles.containerHome} imageStyle={allStyles.backgroundImg}>
+            <View style={allStyles.titleViewHome}>
+               <Text style={allStyles.titleHome} >Latest Psychic Surveys</Text>
+            </View>
       </ImageBackground>
 
    );

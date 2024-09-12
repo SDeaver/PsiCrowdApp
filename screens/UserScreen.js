@@ -7,7 +7,7 @@ export default function UserScreen() {
 
    return(
 
-      <ImageBackground source={imageList.bg} style={allStyles.mainContainer} imageStyle={allStyles.backgroundImg}>
+      <ImageBackground source={imageList.bg} style={allStyles.containerMain} imageStyle={allStyles.backgroundImg}>
             <Text style={allStyles.bodyText} >User Screen</Text>
       </ImageBackground>
       

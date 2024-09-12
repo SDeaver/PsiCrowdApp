@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Modal } from 'react-native';
+//import { Modal } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -12,8 +12,9 @@ import { allStyles, allFonts } from './styles/AllStyles';
 import HomeScreen from './screens/HomeScreen';
 import UserScreen from './screens/UserScreen';
 import SettingsScreen from './screens/SettingsScreen';
+import FAQScreen from './screens/FAQScreen'
 import Header from './components/Header';
-import FAQPopup from './components/FAQPopup'
+//import FAQPopup from './components/FAQPopup'
 import { HomeIcon, UserIcon, SettingsIcon } from './components/Icons';
 
 
@@ -24,7 +25,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
 
-   const [modalVisible, setModalVisible] = useState(false);
+   //const [modalVisible, setModalVisible] = useState(false);
 
 
    // font loading
@@ -44,21 +45,21 @@ export default function App() {
       }
 
 
-   function faqOpen() {
-      setModalVisible(true);
-   }
+   // function faqOpen() {
+   //    setModalVisible(true);
+   // }
 
-   function faqClose() {
-      setModalVisible(false);
-   }
+   // function faqClose() {
+   //    setModalVisible(false);
+   // }
 
    return (
 
       <NavigationContainer>
 
-         <Modal visible={modalVisible} animationType='fade' transparent={true}>
+         {/* <Modal visible={modalVisible} animationType='fade' transparent={true}>
             < FAQPopup faqClose={faqClose} />
-         </Modal>
+         </Modal> */}
 
          <Tab.Navigator
             initialRouteName='Home'
@@ -66,7 +67,7 @@ export default function App() {
                {
                   tabBarShowLabel: false,
                   tabBarStyle: allStyles.tabBarMain,
-                  header: ({ navigation, route, options })=> { return (<Header faqOpen={faqOpen} />) }
+                  header: ({ navigation, route, options })=> { return (<Header navigation={navigation} />) }
                }
             }
          >
@@ -91,6 +92,19 @@ export default function App() {
                   { tabBarIcon: ()=> { return (<SettingsIcon/>) } }
                }
             />
+            <Tab.Screen
+               name="FAQ"
+               component={FAQScreen}
+               options={
+                  {
+                     tabBarButton: () => null,
+                     tabBarIcon: () => null,
+                     tabBarVisible: false
+                  }
+               }
+            />
+
+
          </Tab.Navigator>
       </NavigationContainer>
       

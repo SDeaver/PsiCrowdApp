@@ -3,11 +3,7 @@ import { View, Text } from 'react-native';
 import { allStyles } from '../styles/AllStyles';
 import { FAQIcon } from '../components/Icons';
 
-export default function Header( { faqOpen }) {
-
-   function pressFunction() {
-      faqOpen();
-   }
+export default function Header( { navigation }) {
 
    return (
       <View style={allStyles.headerMain}>
@@ -21,7 +17,7 @@ export default function Header( { faqOpen }) {
          </View>
 
          <View style={ allStyles.headerIconView }>
-            <FAQIcon faqOpen={ pressFunction } />
+            <FAQIcon navigation={navigation}/>
          </View>
 
       </View>

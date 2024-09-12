@@ -11,7 +11,8 @@ export const allFonts = {
 }
 
 export const allStyles = StyleSheet.create ({
-   mainContainer: {
+
+   containerMain: {
       alignItems: 'center',
       justifyContent: 'center',
       height: '100%',
@@ -24,6 +25,10 @@ export const allStyles = StyleSheet.create ({
    tabBarMain: {
       backgroundColor: colors.brand_01,
    },
+   iconMain: {
+      color: colors.brand_02,
+   },
+
    headerMain: {
       alignItems: 'center',
       flexDirection: 'row',
@@ -52,9 +57,28 @@ export const allStyles = StyleSheet.create ({
       fontSize: 36,
       color: colors.brand_01,
    },
-   iconMain: {
-      color: colors.brand_02,
+
+   containerHome: {
+      alignItems: 'center',
+      //justifyContent: 'center',
+      height: '100%',
+      backgroundColor: colors.brand_02,
+   },   
+   titleHome: {
+      fontFamily: 'fontMain',
+      fontSize: 28,
+      color: colors.brand_01,     
    },
+   titleViewHome: {
+      height: '15%',
+      justifyContent: 'center',
+   },
+   surveyList: {
+      
+   },
+
+
+
    modalContainer: {
       flex: 1,
       justifyContent: 'center',
@@ -83,6 +107,5 @@ export const allStyles = StyleSheet.create ({
    faqBody: {
       fontFamily: 'fontMain',
       fontSize: 16,
-      
    }
 })
